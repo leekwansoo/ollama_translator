@@ -1,0 +1,10 @@
+langchain
+langchain-ollama
+langchain-community
+langchain-core
+fastapi
+uvicorn
+pydantic
+python-multipart
+python-dotenv
+jinja2
