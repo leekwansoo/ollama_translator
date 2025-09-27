@@ -7,7 +7,6 @@ import warnings
 warnings.filterwarnings("ignore")
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-
 # Fix for compatibility issues
 os.environ["OMP_NUM_THREADS"] = "1"
 
@@ -20,7 +19,7 @@ st.set_page_config(
 
 try:
     from langchain_ollama import ChatOllama
-    from main import generate_prompt
+    from prompt import generate_prompt
     
     # Initialize the model with error handling
     @st.cache_resource

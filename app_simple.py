@@ -16,7 +16,7 @@ st.set_page_config(
 def main():
     try:
         from langchain_ollama import ChatOllama
-        from main import generate_prompt
+        from prompt import generate_prompt
         
         # Initialize model
         @st.cache_resource
