@@ -1,12 +1,12 @@
 
-streamlit
-langchain
-langchain-ollama
-langchain-community
-langchain-core
-fastapi
-uvicorn
-pydantic
-python-multipart
-python-dotenv
-jinja2
+streamlit>=1.28.0
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.8
+langchain-anthropic>=0.1.0
+langchain-google-genai>=0.0.10
+langchain-groq>=0.0.3
+langchain-ollama>=0.1.0
+python-dotenv>=1.0.0
+requests>=2.31.0
