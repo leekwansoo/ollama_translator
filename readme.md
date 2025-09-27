@@ -7,7 +7,7 @@ llm-model: qwen2.5: latest (working properly for korean texts)
 
 program modules:    main.py
                     app.py
-                    app_simple.py
+                    app_simple.py (Created by github copilot)
 
 
 # to run the cloned or downloaded package
@@ -22,6 +22,6 @@ from the terminal:
     step_1: create venv with "python -m venv venv"
     step_2: activate venv with "venv\Scripts\activate"  
     step_3: install dependencies with "pip install -r requirements.txt"
-    step_4: run the streamlit_app with " streamlit run app_simple.py
+    step_4: run the application with " streamlit run app.py
 
 Voila! "Ollama_Translator UI" will pop up on the window

@@ -3,12 +3,13 @@ import os
 import sys
 import warnings
 
-# Fix for compatibility issues
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-os.environ["OMP_NUM_THREADS"] = "1"
-
-# Suppress warnings
+# Suppress warnings and set environment variables
 warnings.filterwarnings("ignore")
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+
+# Fix for compatibility issues
+os.environ["OMP_NUM_THREADS"] = "1"
 
 # Set Streamlit config to avoid file watcher issues
 st.set_page_config(
@@ -38,15 +39,18 @@ except Exception as e:
     llm = None
 
 st.title("Ollama Translator with Qwen2.5")
-st.sidebar.info("This app uses the Qwen2.5 model from Ollama to translate and edit text between English and Korean.")
+st.sidebar.info("This app uses the Qwen2.5 model from Ollama to translate Korean into English or edit English Text for better quality.")
 version =st.sidebar.selectbox("Version", ["Short version", "Long version"])
 proficiency_level =st.sidebar.selectbox("Proficiency Level", ["Beginner", "High Beginner", "Low Intermediate", "Intermediate", "High Intermediate", "Low Advanced", "Advanced", "High Advanced"])
 formality =st.sidebar.selectbox("Formality", ["Casual", "Neutral", "Formal"])
 confirmation = st.sidebar.selectbox("Is this correct?", ["No", "Yes"])
-
+st.sidebar.write(f"Version: {version}")
+st.sidebar.write(f"Proficiency Level: {proficiency_level}")
+st.sidebar.write(f"Formality: {formality}")
+# Main interface
 text_input = st.text_area("Enter text to translate or edit:", height=200)
 
-if st.button("Translate"):
+if st.button("Translate or Edit"):
     if not text_input.strip():
         st.warning("Please enter text to translate or edit.")
     elif llm is None:
