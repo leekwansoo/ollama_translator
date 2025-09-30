@@ -93,7 +93,9 @@ def initialize_llm(provider: str, api_key: Optional[str] = None):
             from langchain_anthropic import ChatAnthropic
             return ChatAnthropic(
                 model="claude-3-haiku-20240307",
-                anthropic_api_key=api_key,
+                anthropic_api_key=api_key,localhost:8501
+                locallocalhost:8501
+                
                 temperature=0.3
             ), None
             
